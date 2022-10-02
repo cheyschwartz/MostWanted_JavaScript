@@ -430,3 +430,26 @@ function getParents(person, people) {
     return parentsToReturn;
 }
 
+function getSpouse(person, people) {
+
+    var spouse;
+    var spouseArray = [];
+    var spouseToReturn = "";
+
+    if (person.currentSpouse === null) {
+        return "Spouse not in data set.";
+    }
+    else {
+        spouseArray = people.filter(function (element) {
+            if (element.id === person.currentSpouse) {
+                return true;
+            }
+        });
+    }
+
+    spouse = spouseArray.pop();
+
+    spouseToReturn = spouse.firstName + " " + spouse.lastName;
+
+    return spouseToReturn;
+}
