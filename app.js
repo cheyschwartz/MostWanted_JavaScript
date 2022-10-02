@@ -164,3 +164,16 @@ function lookUpEyeColor(people) {
     return eyeColorFilteredArray;
 }
 
+function lookUpHeight(people) {
+
+    var height = parseInt(promptFor("What is the person's height?", chars));
+    var heightFilteredArray = people.filter(function (element) {
+
+        if (element.height === height) {
+            return true;
+        }
+    });
+
+    return heightFilteredArray;
+}
+
