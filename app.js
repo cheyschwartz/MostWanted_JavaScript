@@ -301,3 +301,20 @@ function displayDescendants(person, people) {
     app(people);
 }
 
+function findDescendants(person, people) {
+
+    var descendant = getDescendants(person, people);
+    var descendantsToReturn = "";
+
+    for (var i = 0; i < descendant.length; i++) {
+        descendantsToReturn += descendant[i].firstName + " " + descendant[i].lastName + ". ";
+
+        if (i >= 0) {
+            var grandChildren = findDescendants(descendant[i], people);
+            descendantsToReturn += grandChildren;
+        }
+    }
+
+    return descendantsToReturn;
+}
+
