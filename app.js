@@ -407,3 +407,26 @@ function chars(input) {
     return true;
 }
 
+function getParents(person, people) {
+
+    var parents = [];
+    var parentsToReturn = "";
+
+    if (person.parents.length === 0) {
+        return "Parents not in data set.";
+    }
+    else {
+        parents = people.filter(function (element) {
+            if (element.id === person.parents[0] || element.id === person.parents[1]) {
+                return true;
+            }
+        });
+    }
+
+    for (var i = 0; i < parents.length; i++) {
+        parentsToReturn += parents[i].firstName + " " + parents[i].lastName + " ";
+    }
+
+    return parentsToReturn;
+}
+
