@@ -78,3 +78,18 @@ function searchByTraits(people) {
     app(people);
 }
 
+function searchByHeight(people) {
+    var heightSearch = promptFor("Do you want to search by height? Enter yes or no.", yesNo).toLowerCase();
+
+    switch (heightSearch) {
+        case "yes":
+            var findHeight = lookUpHeight(people);
+            return findHeight;
+        case "no":
+            return people;
+        default:
+            searchByHeight(people);
+            break;
+    }
+}
+
