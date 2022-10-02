@@ -273,3 +273,19 @@ function displayPerson(person, people) {
     app(people);
 }
 
+function displayFamily(person, people) {
+
+    var parent = getParents(person, people);
+    var spouse = getSpouse(person, people);
+    var siblings = getSiblings(person, people);
+    var children = getChildren(person, people);
+    var personFamily = "Parents: " + parent + "\n";
+
+    personFamily += "Spouse: " + spouse + "\n";
+    personFamily += "Siblings: " + siblings + "\n";
+    personFamily += "Children: " + children;
+
+    alert(personFamily);
+    app(people);
+}
+
