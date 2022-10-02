@@ -138,3 +138,16 @@ function searchByEyeColor(people) {
     }
 }
 
+function lookUpOccupation(people) {
+
+    var occupation = promptFor("What is the person's occupation?", chars);
+    var occupationFilteredArray = people.filter(function (element) {
+
+        if (element.occupation === occupation) {
+            return true;
+        }
+    });
+
+    return occupationFilteredArray;
+}
+
