@@ -123,3 +123,18 @@ function searchByOccupation(people) {
     }
 }
 
+function searchByEyeColor(people) {
+    var eyeColorSearch = promptFor("Do you want to search by eye color? Enter yes or no.", yesNo).toLowerCase();
+
+    switch (eyeColorSearch) {
+        case "yes":
+            var findEyeColor = lookUpEyeColor(people);
+            return findEyeColor;
+        case "no":
+            return people;
+        default:
+            searchByEyeColor(people);
+            break;
+    }
+}
+
