@@ -224,3 +224,14 @@ function changeDateValueToAge(dateValue) {
     return dateValue / dateConversionValue;
 }
 
+function lookUpAge(people) {
+
+    var age = parseInt(promptFor("What is the person's age?", chars));
+    var ageFilteredArray = people.filter(function (element) {
+        if (element.age === age) {
+            return true;
+        }
+    });
+    return ageFilteredArray;
+}
+
