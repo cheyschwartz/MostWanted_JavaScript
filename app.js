@@ -253,3 +253,23 @@ function searchByName(people) {
     mainMenu(person, people);
 }
 
+function displayPerson(person, people) {
+
+    var parent = getParents(person, people);
+    var spouse = getSpouse(person, people);
+
+    var personInfo = "First Name: " + person.firstName + "\n";
+    personInfo += "Last Name: " + person.lastName + "\n";
+    personInfo += "Gender: " + person.gender + "\n";
+    personInfo += "DOB: " + person.dob + "\n";
+    personInfo += "Height: " + person.height + "\n";
+    personInfo += "Weight: " + person.weight + "\n";
+    personInfo += "Eye Color: " + person.eyeColor + "\n";
+    personInfo += "Occupation: " + person.occupation + "\n";
+    personInfo += "Parents: " + parent + "\n";
+    personInfo += "Spouse: " + spouse;
+
+    alert(personInfo);
+    app(people);
+}
+
