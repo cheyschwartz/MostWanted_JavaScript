@@ -151,3 +151,16 @@ function lookUpOccupation(people) {
     return occupationFilteredArray;
 }
 
+function lookUpEyeColor(people) {
+
+    var eyeColor = promptFor("What is the person's eye color?", chars);
+    var eyeColorFilteredArray = people.filter(function (element) {
+
+        if (element.eyeColor === eyeColor) {
+            return true;
+        }
+    });
+
+    return eyeColorFilteredArray;
+}
+
