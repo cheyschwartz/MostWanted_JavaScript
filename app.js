@@ -334,3 +334,28 @@ function getDescendants(person, people) {
     return descendants;
 }
 
+function getChildren(person, people) {
+
+    var children = [];
+    var childrenToReturn = "";
+
+    children = people.filter(function (element) {
+        if (element.parents.length === 0) {
+            return false;
+        }
+        else if (element.parents[0] === person.id || element.parents[1] === person.id) {
+            return true;
+        }
+    });
+
+    for (var i = 0; i < children.length; i++) {
+        childrenToReturn += children[i].firstName + " " + children[i].lastName + " ";
+    }
+
+    if (children.length === 0) {
+        childrenToReturn = "Children not in data set.";
+    }
+
+    return childrenToReturn;
+}
+
