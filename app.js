@@ -177,3 +177,16 @@ function lookUpHeight(people) {
     return heightFilteredArray;
 }
 
+function lookUpWeight(people) {
+
+    var weight = parseInt(promptFor("What is the person's weight?", chars));
+    var weightFilteredArray = people.filter(function (element) {
+
+        if (element.weight === weight) {
+            return true;
+        }
+    });
+
+    return weightFilteredArray;
+}
+
