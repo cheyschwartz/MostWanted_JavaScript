@@ -359,3 +359,35 @@ function getChildren(person, people) {
     return childrenToReturn;
 }
 
+function getSiblings(person, people) {
+
+    var siblings = [];
+    var siblingsToReturn = "";
+
+    if (person.parents.length === 0) {
+        return "Siblings not in data set.";
+    }
+    else {
+        siblings = people.filter(function (element) {
+            if (element.parents.length === 0) {
+                return false;
+            }
+            else if (element === person) {
+                return false;
+            }
+            else if (element.parents[0] === person.parents[0] || element.parents[0] === person.parents[1]) {
+                return true;
+            }
+            else if (element.parents[1] === person.parents[0] || element.parents[1] === person.parents[1]) {
+                return true;
+            }
+        });
+    }
+
+    for (var i = 0; i < siblings.length; i++) {
+        siblingsToReturn += siblings[i].firstName + " " + siblings[i].lastName + " ";
+    }
+
+    return siblingsToReturn;
+}
+
