@@ -235,3 +235,21 @@ function lookUpAge(people) {
     return ageFilteredArray;
 }
 
+function searchByName(people) {
+
+    var firstName = promptFor("What is the person's first name?", chars);
+    var lastName = promptFor("What is the person's last name?", chars);
+    var person;
+    var personFoundArry = [];
+
+    personFoundArry = people.filter(function (element) {
+        if (element.firstName.toLowerCase() === firstName.toLowerCase() && element.lastName.toLowerCase() === lastName.toLowerCase()) {
+            return true;
+        }
+    });
+
+    person = personFoundArry.pop();
+
+    mainMenu(person, people);
+}
+
