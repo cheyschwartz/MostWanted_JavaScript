@@ -93,3 +93,18 @@ function searchByHeight(people) {
     }
 }
 
+function searchByWeight(people) {
+    var weightSearch = promptFor("Do you want to search by weight? Enter yes or no.", yesNo).toLowerCase();
+
+    switch (weightSearch) {
+        case "yes":
+            var findWeight = lookUpWeight(people);
+            return findWeight;
+        case "no":
+            return people;
+        default:
+            searchByWeight(people);
+            break;
+    }
+}
+
