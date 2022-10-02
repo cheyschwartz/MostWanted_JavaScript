@@ -207,3 +207,14 @@ function searchByAge(people) {
     }
 }
 
+function changeDobToAge(people) {
+
+    var peopleAge = people.map(function (element) {
+        var dateOfBirth = new Date(element.dob);
+        var currentDate = new Date();
+        var result = currentDate - dateOfBirth;
+        var age = Math.floor(result / changeDateValueToAge(result));
+        return element.age = age;
+    });
+}
+
