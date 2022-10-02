@@ -108,3 +108,18 @@ function searchByWeight(people) {
     }
 }
 
+function searchByOccupation(people) {
+    var occupationSearch = promptFor("Do you want to search by occupation? Enter yes or no.", yesNo).toLowerCase();
+
+    switch (occupationSearch) {
+        case "yes":
+            var findOccupation = lookUpOccupation(people);
+            return findOccupation;
+        case "no":
+            return people;
+        default:
+            searchByOccupation(people);
+            break;
+    }
+}
+
