@@ -190,3 +190,20 @@ function lookUpWeight(people) {
     return weightFilteredArray;
 }
 
+function searchByAge(people) {
+
+    var ageSearch = promptFor("Do you want to search by age? Enter yes or no.", yesNo).toLowerCase();
+
+    switch (ageSearch) {
+        case "yes":
+            changeDobToAge(people);
+            var findAge = lookUpAge(people);
+            return findAge;
+        case "no":
+            return people;
+        default:
+            searchByAge(people);
+            break;
+    }
+}
+
