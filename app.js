@@ -218,3 +218,9 @@ function changeDobToAge(people) {
     });
 }
 
+function changeDateValueToAge(dateValue) {
+    //dateConversionValue converts the total date in millliseconds to years
+    var dateConversionValue = 1000 * 60 * 60 * 24 * 365;
+    return dateValue / dateConversionValue;
+}
+
