@@ -289,3 +289,15 @@ function displayFamily(person, people) {
     app(people);
 }
 
+function displayDescendants(person, people) {
+
+    var descendants = findDescendants(person, people);
+
+    if (descendants.length === 0) {
+        descendants = "Descendants not in data set."
+    }
+
+    alert(descendants);
+    app(people);
+}
+
