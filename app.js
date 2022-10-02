@@ -50,3 +50,31 @@ function mainMenu(person, people) {
     }
 }
 
+function searchByTraits(people) {
+
+    var listed = "";
+    var filteredList;
+    var filterCheck = people.length;
+
+    filteredList = searchByAge(people);
+    filteredList = searchByHeight(filteredList);
+    filteredList = searchByWeight(filteredList);
+    filteredList = searchByOccupation(filteredList);
+    filteredList = searchByEyeColor(filteredList);
+
+    if (filteredList.length === filterCheck) {
+        alert("You said no to all filters, there is no one to display.");
+    }
+    else if (filteredList.length === 0) {
+        alert("There is no one that meets your criteria.");
+    }
+    else {
+        for (var i = 0; i < filteredList.length; i++) {
+            listed += filteredList[i].firstName + " " + filteredList[i].lastName + " ";
+        }
+        alert(listed);
+    }
+
+    app(people);
+}
+
