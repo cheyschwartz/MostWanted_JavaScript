@@ -318,3 +318,19 @@ function findDescendants(person, people) {
     return descendantsToReturn;
 }
 
+function getDescendants(person, people) {
+
+    var descendants = [];
+
+    descendants = people.filter(function (element) {
+        if (element.parents.length === 0) {
+            return false;
+        }
+        else if (element.parents[0] === person.id || element.parents[1] === person.id) {
+            return true;
+        }
+    });
+
+    return descendants;
+}
+
